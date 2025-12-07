@@ -1,0 +1,17 @@
+CREATE TABLE appointment_db."users" (
+    id BIGINT GENERATED ALWAYS AS IDENTITY (
+        START WITH 1
+        INCREMENT BY 1
+    ) PRIMARY KEY,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    first_name VARCHAR(50) NOT NULL,
+    last_name VARCHAR(50) NOT NULL,
+    phone VARCHAR(20),
+    role VARCHAR(20) NOT NULL,
+    status VARCHAR(20) NOT NULL DEFAULT 'ACTIVE',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT chk_user_role CHECK (role IN ('CUSTOMER', 'TRAINER', 'ADMIN')),
+    CONSTRAINT chk_user_status CHECK (status IN ('ACTIVE', 'INACTIVE'))
+);
