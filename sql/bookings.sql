@@ -4,7 +4,7 @@ CREATE TABLE appointment_db."bookings" (
         INCREMENT BY 1
     ) PRIMARY KEY,
     user_id BIGINT NOT NULL,
-    provider_id BIGINT NOT NULL,
+    trainer_id BIGINT NOT NULL,
     slot_id BIGINT NOT NULL,
     status VARCHAR(20) NOT NULL DEFAULT 'BOOKED',
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
@@ -17,9 +17,9 @@ CREATE TABLE appointment_db."bookings" (
         ON DELETE CASCADE 
         ON UPDATE CASCADE,
     
-    CONSTRAINT fk_booking_provider 
-        FOREIGN KEY (provider_id) 
-        REFERENCES appointment_db."providers"(provider_id) 
+    CONSTRAINT fk_booking_trainer
+        FOREIGN KEY (trainer_id) 
+        REFERENCES appointment_db."trainers"(trainer_id) 
         ON DELETE CASCADE 
         ON UPDATE CASCADE,
     
