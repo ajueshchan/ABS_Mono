@@ -1,4 +1,4 @@
-CREATE TABLE appointment_db."users" (
+CREATE TABLE appointment."users" (
     id BIGINT GENERATED ALWAYS AS IDENTITY (
         START WITH 1
         INCREMENT BY 1
