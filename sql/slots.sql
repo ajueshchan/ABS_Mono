@@ -1,4 +1,4 @@
-CREATE TABLE appointment_db."slots" (
+CREATE TABLE appointment."slots" (
     slot_id BIGINT GENERATED ALWAYS AS IDENTITY (
         START WITH 1
         INCREMENT BY 1
@@ -12,7 +12,7 @@ CREATE TABLE appointment_db."slots" (
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     CONSTRAINT fk_slot_trainer 
         FOREIGN KEY (trainer_id) 
-        REFERENCES appointment_db."trainers"(trainer_id) 
+        REFERENCES appointment."trainers"(trainer_id) 
         ON DELETE CASCADE 
         ON UPDATE CASCADE,
     CONSTRAINT chk_slot_time_order 
