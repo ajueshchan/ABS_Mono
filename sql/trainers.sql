@@ -5,7 +5,7 @@ CREATE TABLE appointment."trainers" (
     ) PRIMARY KEY,
     user_id BIGINT NOT NULL,
     name VARCHAR(100) NOT NULL,
-    category VARCHAR(50) NOT NULL,
+    designation VARCHAR(50) NOT NULL,
     description TEXT,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
