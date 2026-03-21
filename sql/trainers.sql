@@ -3,7 +3,7 @@ CREATE TABLE appointment."trainers" (
         START WITH 1
         INCREMENT BY 1
     ) PRIMARY KEY,
-    user_id BIGINT NOT NULL,
+    user_id BIGINT NOT NULL UNIQUE
     name VARCHAR(100) NOT NULL,
     designation VARCHAR(50) NOT NULL,
     description TEXT,
